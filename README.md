@@ -1,67 +1,72 @@
-ecstats
+How to use ecstats for AWS Elasticache
 =====
 
-ecstats is a script which helps to capture your AWS ElastiCache usage.
-The scripts extract your current usage in ElastiCache, including the information such as throughput, dataset size and operation types.
+# Pre-requisite
 
-## How it works
+- Install Docker Desktop for Mac via https://hub.docker.com/editions/community/docker-ce-desktop-mac
 
-This pullElasticCacheStats script connects to your AWS account using boto3 (AWS API), and pulls out your current ElastiCache usage.
-The script pulls the stats from ElastiCache, CloudWatch and Cost Estimator API's for a a specified region.
-First the ElastiCache clusters information is extracted such as number of clusters and instance types.
-Then additional information is extracted from CloudWatch, such as the operations types and throughput, network utilization to help better understand your Redis cluster utilization.
-
-You can see a sample out put sampleStats.csv in the outputs folder.
-
-## Running from Docker
-
-# Copy config file and edit
-```
-$ cp config.cfg.example config.cfg
-```
-
-# Run docker mount the current directory for the docker image
-```
-$ docker run -v$(pwd):/ecstats docker.pkg.github.com/redislabs-solution-architects/ecstats/ecstats:1.0
-```
-
-# Results will be stored in the mounted folder (example)
-```
-$ ls *.csv
-production-us-east-2.csv
-```
-
-## Running from source
 
 ```
-# Clone:
-git clone https://github.com/Redislabs-Solution-Architects/EC2RL
+docker version
+Client: Docker Engine - Community
+ Version:           19.03.5
+ API version:       1.40
+ Go version:        go1.12.12
+ Git commit:        633a0ea
+ Built:             Wed Nov 13 07:22:34 2019
+ OS/Arch:           darwin/amd64
+ Experimental:      false
 
-# Prepare virtualenv:
-cd EC2RL
-mkdir .env
-virtualenv .env
+Server: Docker Engine - Community
+ Engine:
+  Version:          19.03.5
+  API version:      1.40 (minimum version 1.12)
+  Go version:       go1.12.12
+  Git commit:       633a0ea
+  Built:            Wed Nov 13 07:29:19 2019
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          v1.2.10
+  GitCommit:        b34a5c8af56e510852c35414db4c1f4fa6172339
+ runc:
+  Version:          1.0.0-rc8+dev
+  GitCommit:        3e425f80a8c931f88e6d94a8c831b9d5aa481657
+ docker-init:
+  Version:          0.18.0
+  GitCommit:        fec3683
 
-# Activate virtualenv
-. .env/bin/activate
+```
+- Setup AWS ElasticCache using AWS UI
 
-# Install necessary libraries
-pip install -r requirements.txt
-
-# When finished
-deactivate
+```
+aws elasticache redis-demo \
+--replication-group-id redis-tutorial \
+--replication-group-description "Redis Cache example" \
+--num-node-groups 3 \
+--cache-node-type cache.t2.micro \
+--cache-parameter-group default.redis5.0.cluster.on \
+--engine redis \
+--engine-version 5.0.6 \
+--cache-subnet-group-name redis-demo-subnet ( \
+--security-group-ids sg-04edf00f9703c9d04 ( \
+--node-group-configuration \
+"ReplicaCount=2,PrimaryAvailabilityZone='us-west-2a',ReplicaAvailabilityZones='us-west-2a','us-east-1c',Slots=-5461" \
+"ReplicaCount=2,PrimaryAvailabilityZone='us-west-2a',ReplicaAvailabilityZones='us-west-2a','us-east-1a',Slots=5462-10922" \
+"ReplicaCount=2,PrimaryAvailabilityZone='us-west-2a',ReplicaAvailabilityZones='us-west-2a','us-east-1b',Slots=10923-16383"
 ```
 
-To run the script copy the configuration file and edit:
+
+- Build Docker Image
 
 ```
-cp config.cfg.example config.cfg
+cd ecstats
+docker build -t ajeetraina/myecstats .
 ```
 
-Execute 
+- Running Docker Container
+
 
 ```
-python pullElasticCacheStats.py -c config.cfg
-```
 
-The output will be a CSV files named according to the sections and region which are in the config file. 
+```
