@@ -84,11 +84,12 @@ ajeetraina/myecstats   v1.0                632036754c4f        27 minutes ago   
 
 
 ```
-docker run -v$(pwd):/ecstats ajeetraina/myecstats
+MacBook-Pro ecstats % docker run -v$(pwd):/ecstats ajeetraina/myecstats
 Grab a coffee this script takes a while...
 Writing Headers
 Gathering data...
 
 ```
+
 
 
