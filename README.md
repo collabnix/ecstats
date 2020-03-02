@@ -69,9 +69,26 @@ cd ecstats
 docker build -t ajeetraina/myecstats .
 ```
 
+- Verifying Docker Image
+
+
+```
+docker images
+REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
+ajeetraina/myecstats   latest              632036754c4f        27 minutes ago      1.25GB
+ajeetraina/myecstats   v1.0                632036754c4f        27 minutes ago      1.25GB
+
+```
+
 - Running Docker Container
 
 
 ```
+docker run -v$(pwd):/ecstats ajeetraina/myecstats
+Grab a coffee this script takes a while...
+Writing Headers
+Gathering data...
 
 ```
+
+
