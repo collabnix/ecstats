@@ -1,5 +1,5 @@
 # How to use ecstats for AWS Elasticache
-=====
+
 
 ## Pre-requisite
 
@@ -56,6 +56,11 @@ aws elasticache redis-demo \
 "ReplicaCount=2,PrimaryAvailabilityZone='us-west-2a',ReplicaAvailabilityZones='us-west-2a','us-east-1b',Slots=10923-16383"
 ```
 
+- Clone this Repository
+
+```
+git clone https://github.com/collabnix/ecstats
+```
 
 - Build Docker Image
 
