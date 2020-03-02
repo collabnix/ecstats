@@ -84,10 +84,33 @@ ajeetraina/myecstats   v1.0                632036754c4f        27 minutes ago   
 
 
 ```
-MacBook-Pro ecstats % docker run -v$(pwd):/ecstats ajeetraina/myecstats
+ docker run -v$(pwd):/ecstats ajeetraina/myecstats
 Grab a coffee this script takes a while...
 Writing Headers
 Gathering data...
+Getting node redis-demo-0001-001 details
+Getting node redis-demo-0001-002 details
+Getting node redis-demo-0001-003 details
+Getting node redis-demo-0002-001 details
+Getting node redis-demo-0002-002 details
+Getting node redis-demo-0002-003 details
+Getting node redis-demo-0003-001 details
+Getting node redis-demo-0003-002 details
+Getting node redis-demo-0003-003 details
+###Done###
+Grab a coffee this script takes a while...
+Writing Headers
+Gathering data...
+Getting node redis-demo-0001-001 details
+Getting node redis-demo-0001-002 details
+Getting node redis-demo-0001-003 details
+Getting node redis-demo-0002-001 details
+Getting node redis-demo-0002-002 details
+Getting node redis-demo-0002-003 details
+Getting node redis-demo-0003-001 details
+Getting node redis-demo-0003-002 details
+Getting node redis-demo-0003-003 details
+###Done###
 
 ```
 
