@@ -92,7 +92,7 @@ Gathering data...
 ```
 
 ```
-ajeetraina@Shahars-MacBook-Pro ecstats % cat production-us-west-2.csv 
+ajeetraina@MacBook-Pro ecstats % cat production-us-west-2.csv 
 ,ClusterId,NodeId,NodeType,Region,CurrItems (max over last week),BytesUsedForCache (max over last week),CacheHits (max over last week),CacheMisses (max over last week),CurrConnections (max over last week),NetworkBytesIn (max over last week),NetworkBytesOut (max over last week),NetworkPacketsIn (max over last week),NetworkPacketsOut (max over last week),EngineCPUUtilization (max over last week),Evictions (max over last week),ReplicationBytes (max over last week),ReplicationLag (max over last week),GetTypeCmds (peak last week / hour),HashBasedCmds (peak last week / hour),HyperLogLogBasedCmds (peak last week / hour),KeyBasedCmds (peak last week / hour),ListBasedCmds (peak last week / hour),SetBasedCmds (peak last week / hour),SetTypeCmds (peak last week / hour),SortedSetBasedCmds (peak last week / hour),StringBasedCmds (peak last week / hour),StreamBasedCmds (peak last week / hour),Unnamed: 27
 0,redis-demo,redis-demo-0001-001,cache.t2.micro,us-west-2a,0,6471376.0,0,0,4.0,33976115.0,1165917.0,23256.0,9613.0,0.2000666888962988,0,3264.0,0.0,0,0,0,0,0,0,0,0,0,0,
 1,redis-demo,redis-demo-0001-002,cache.t2.micro,us-west-2a,0,6412608.0,0,0,6.0,34011036.0,1240920.0,23415.0,3062.0,0.2001000500250125,0,3264.0,0.004,0,0,0,0,0,0,0,0,0,0,
