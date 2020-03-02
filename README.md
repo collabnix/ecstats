@@ -56,20 +56,20 @@ aws elasticache redis-demo \
 "ReplicaCount=2,PrimaryAvailabilityZone='us-west-2a',ReplicaAvailabilityZones='us-west-2a','us-east-1b',Slots=10923-16383"
 ```
 
-- Clone this Repository
+## Clone this Repository
 
 ```
 git clone https://github.com/collabnix/ecstats
 ```
 
-- Build Docker Image
+## Build Docker Image
 
 ```
 cd ecstats
 docker build -t ajeetraina/myecstats .
 ```
 
-- Verifying Docker Image
+## Verifying Docker Image
 
 
 ```
@@ -80,7 +80,7 @@ ajeetraina/myecstats   v1.0                632036754c4f        27 minutes ago   
 
 ```
 
-- Running Docker Container
+## Running Docker Container
 
 
 ```
