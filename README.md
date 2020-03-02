@@ -37,7 +37,7 @@ Server: Docker Engine - Community
   GitCommit:        fec3683
 
 ```
-- Setup AWS ElasticCache using AWS UI
+##  Setup AWS ElasticCache using AWS UI
 
 ```
 aws elasticache redis-demo \
