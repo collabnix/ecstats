@@ -1,9 +1,9 @@
-How to use ecstats for AWS Elasticache
+# How to use ecstats for AWS Elasticache
 =====
 
-# Pre-requisite
+## Pre-requisite
 
-- Install Docker Desktop for Mac via https://hub.docker.com/editions/community/docker-ce-desktop-mac
+- Install Docker Desktop for Mac via https://hub.docker.com/editions/community/docker-ce-desktop-mac(if you are using Macbook)
 
 
 ```
