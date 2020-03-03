@@ -135,3 +135,10 @@ costs
 ####Total costs per month####  0.0%  
 ```
 
+# Troubleshooting
+
+- If you are using the simple python script, ensure that you have AWSCLI installed and configured
+
+```
+aws configure
+```
